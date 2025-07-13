@@ -1,39 +1,26 @@
-    name: CI/CD Portfolio to Netlify
+# ✅ Workflow name
+name: CI/CD HTML Portfolio to Netlify (Windows)
 
+# ✅ Trigger on push to main
 on:
   push:
     branches:
-      - main
+      - main  # 👉 Change this to 'master' or your branch name if different
 
 jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: windows-latest  # ✅ Using Windows runner
 
     steps:
+      # ✅ Step 1: Checkout your code
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Lint Code (optional)
-        run: npm run lint
-
-      - name: Run Tests (optional)
-        run: npm run test
-
-      - name: Build Project
-        run: npm run build
-
+      # ✅ Step 2: Deploy the static HTML site to Netlify
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0
         with:
-        publish-dir: './dist'
-        production-deploy: true
-        NETLIFY_AUTH_TOKEN: ${{ nfp_purGU6ZWzWyXTETLV6bNEGRKnGbJiybh0dda }}
-        NETLIFY_SITE_ID: ${{ f2601a9f-812a-4472-9d99-e95e6af5372b }}
+          publish-dir: .\\  # 👉 Deploy from root directory (Windows uses \\)
+          production-deploy: true
+          NETLIFY_AUTH_TOKEN: ${{ nfp_purGU6ZWzWyXTETLV6bNEGRKnGbJiybh0dda }}
+          NETLIFY_SITE_ID: ${{ f2601a9f-812a-4472-9d99-e95e6af5372b }}
