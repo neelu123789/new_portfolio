@@ -1,6 +1,3 @@
-![Deploy Status](https://github.com/neelu123789/new_portfolio/actions/workflows/deploy.yml/badge.svg)
-
-
 # <a href="https://vinodjangid07.github.io/" target="_blank">My Portfolio</a>
 <p align="justify">This website displays my Projects, Web presence, Story, Work experience, and contact information.</p>
 
