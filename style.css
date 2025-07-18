@@ -1517,7 +1517,11 @@ footer {
     height: 20px;
     background-color: #000;
     border-radius: 50%;
+<<<<<<< HEAD
     border: 5px solid #413333;
+=======
+    border: 5px solid #172c66;
+>>>>>>> d348cd0 (Edit avatar footer)
     filter: blur(.6px)
 }
 
